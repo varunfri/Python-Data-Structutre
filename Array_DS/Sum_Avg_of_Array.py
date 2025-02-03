@@ -1,3 +1,5 @@
+# Write a function to get sum and avg of array
+
 import numpy as np
 
 def sum_avg(x):
