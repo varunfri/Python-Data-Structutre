@@ -1,20 +1,18 @@
-# Write a program to find the smallest element among N inputted numbers.
+#  Write a program to find the smallest element among N inputted numbers. 
+import numpy as np
+def find_small_n(arr):
+    small = arr[0]
+    for num in arr:
+        if num < small:
+            small = num
+    return small
 
-n = int(input("Enter the number of elements: "))  
+arr_temp = []
+n = int(input("How many number want to enter? : "))
+for i in range(n):
+    val = int(input(f"Enter {i+1} element: "))
+    arr_temp.append(val)
+arr_n = np.array(arr_temp)
+print(arr_n)
 
-if n <= 0:
-    print("Invalid input! The number of elements must be greater than 0.")
-else:
-    arr = []  # Initialize an empty list
-
-    for i in range(n):
-        num = int(input(f"Enter number {i+1}: "))
-        arr.append(num)  # Store numbers in the list
-
-    smallest = arr[0]  # Assume the first element is the smallest
-
-    for i in range(1, n):
-        if arr[i] < smallest:  # Compare each element with smallest
-            smallest = arr[i]
-
-    print("The smallest number is:", smallest)
+print("Smallest among N numbers is: ",find_small_n(arr_n))
